@@ -70,7 +70,7 @@ export default function Home() {
         <Navbar />
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/hero.mp4"
+          src="https://res.cloudinary.com/ds1gudova/video/upload/v1767704674/hero_lnofps.mp4"
           autoPlay
           loop
           muted
@@ -273,7 +273,7 @@ export default function Home() {
       <section className="relative h-screen w-full overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/cta.mp4"
+          src="https://res.cloudinary.com/ds1gudova/video/upload/v1767704675/cta_sjo2z6.mp4"
           autoPlay
           loop
           muted

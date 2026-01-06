@@ -71,7 +71,7 @@ export default function ProgramsPage() {
       {/* BACKGROUND VIDEO */}
       <video
         className="fixed inset-0 w-full h-full object-cover -z-10"
-        src="/videos/programs-bg.mp4"
+        src="https://res.cloudinary.com/ds1gudova/video/upload/v1767704674/programs-bg_jfbwob.mp4"
         autoPlay
         loop
         muted
