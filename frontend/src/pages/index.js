@@ -104,7 +104,7 @@ export default function Home() {
         <Navbar />
      <video
   className="absolute inset-0 w-full h-full object-cover"
-  src="/videos/hero.MP4"
+  src="/videos/hero.mp4"
   autoPlay
   loop
   muted
@@ -128,18 +128,18 @@ export default function Home() {
       </section>
 
       {/* ================= FLOWING VIDEO BACKGROUND ================= */}
-      <section className="relative overflow-hidden">
-        <video
-          className="fixed inset-0 w-full h-full object-cover -z-10"
-          src="/videos/wellness-bg.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+      <section className="relative overflow-hidden min-h-screen">
+       <video
+  className="absolute inset-0 w-full h-full object-cover z-0"
+  src="/videos/wellness-bg.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+/>
 
         {/* ONLY 15 BLUR */}
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-[4px] -z-10" />
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-[4px] z-10" />
 
         {/* ================= PROGRAMS ================= */}
        <motion.section
@@ -147,7 +147,7 @@ export default function Home() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="py-24 px-6"
+  className="relative z-20 py-24 px-6"
 >
   <div className="max-w-6xl mx-auto">
     <h2 className="text-center text-4xl font-light text-green-900 mb-16">
@@ -201,7 +201,7 @@ export default function Home() {
         {/* ================= SPECIALTIES ================= */}
         {/* ================= OUR SERVICES ================= */}
 
-<section className="py-24 px-6">
+<section className="relative z-20 py-24 px-6">
   <div className="max-w-7xl mx-auto">
 
     <h2 className="text-center text-5xl font-light text-green-900 mb-4">
@@ -260,7 +260,7 @@ export default function Home() {
 </section>
 
         {/* ================= TESTIMONIALS ================= */}
-        <section className="py-24 px-6">
+       <section className="relative z-20 py-24 px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-light text-green-900 mb-16">
               What Our Clients Say
@@ -284,7 +284,7 @@ export default function Home() {
         </section>
 
         {/* ================= BLOG ================= */}
-        <section className="py-24 px-6">
+       <section className="relative z-20 py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center text-4xl font-light text-green-900 mb-16">
               Blog & Wellness News
