@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 
@@ -32,14 +33,47 @@ export default function Home() {
   },
 ];
   const specialties = [
-    { title: "Yoga & Mindfulness", image: "/images/specialties/yoga.jpg" },
-    { title: "Ayurvedic Healing", image: "/images/specialties/ayurveda.jpg" },
-    { title: "Fitness Training", image: "/images/specialties/fitness.jpg" },
-    { title: "Nutrition Guidance", image: "/images/specialties/nutrition.jpg" },
-    { title: "Meditation Therapy", image: "/images/specialties/meditation.jpg" },
-    { title: "Holistic Therapy", image: "/images/specialties/therapy.jpg" },
-  ];
-
+  {
+    title: "Yoga Therapies",
+    image: "/images/services/yoga.jpg",
+  },
+  {
+    title: "Meditation Therapies",
+    image: "/images/services/meditation.jpg",
+  },
+  {
+    title: "Pranayama Therapies",
+    image: "/images/services/pranayama.jpg",
+  },
+  {
+    title: "Student Wellness",
+    image: "/images/services/student.jpg",
+  },
+  {
+    title: "Post Lunch Therapies",
+    image: "/images/services/post-lunch.jpg",
+  },
+  {
+    title: "Yoga Pilates",
+    image: "/images/services/pilates.jpg",
+  },
+  {
+    title: "Weight Management",
+    image: "/images/services/weight.jpg",
+  },
+  {
+    title: "Diet & Nutrition",
+    image: "/images/services/diet.jpg",
+  },
+  {
+    title: "Chakra Healing",
+    image: "/images/services/chakra.jpg",
+  },
+  {
+    title: "Sudarshan Kriya",
+    image: "/images/services/sudarshan-kriya.jpg",
+  },
+];
   const testimonials = [
     {
       name: "Ritika Sharma",
@@ -68,14 +102,14 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section className="relative h-screen w-full overflow-hidden">
         <Navbar />
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://res.cloudinary.com/ds1gudova/video/upload/v1767704674/hero_lnofps.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+     <video
+  className="absolute inset-0 w-full h-full object-cover"
+  src="/videos/hero.MP4"
+  autoPlay
+  loop
+  muted
+  playsInline
+/>
         <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
 
         <motion.div
@@ -97,7 +131,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <video
           className="fixed inset-0 w-full h-full object-cover -z-10"
-          src="/videos/water-sunlight.mp4"
+          src="/videos/wellness-bg.mp4"
           autoPlay
           loop
           muted
@@ -105,7 +139,7 @@ export default function Home() {
         />
 
         {/* ONLY 15 BLUR */}
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-[15px] -z-10" />
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-[4px] -z-10" />
 
         {/* ================= PROGRAMS ================= */}
        <motion.section
@@ -153,18 +187,9 @@ export default function Home() {
     <div className="mt-16 flex justify-center">
       <a href="/programs">
         <button
-          className="
-            px-12 py-4
-            rounded-full
-            border border-green-700
-            text-green-700
-            text-sm
-            tracking-widest
-            bg-transparent
-            hover:bg-green-700
-            hover:text-white
-            transition
-          "
+          
+  className="inline-flex items-center justify-center px-10 py-4 bg-green-700 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-green-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+
         >
           Explore More Programs
         </button>
@@ -174,31 +199,65 @@ export default function Home() {
 </motion.section>
 
         {/* ================= SPECIALTIES ================= */}
-        <section className="py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-center text-4xl font-light text-green-900 mb-16">
-              Our Specialties
-            </h2>
+        {/* ================= OUR SERVICES ================= */}
 
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {specialties.map((s, i) => (
-                <div
-                  key={i}
-                  className="bg-white/70 rounded-2xl shadow-lg overflow-hidden"
-                >
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="h-48 w-full object-cover"
-                  />
-                  <div className="p-6 text-center">
-                    <h3 className="text-lg text-green-900">{s.title}</h3>
-                  </div>
-                </div>
-              ))}
-            </div>
+<section className="py-24 px-6">
+  <div className="max-w-7xl mx-auto">
+
+    <h2 className="text-center text-5xl font-light text-green-900 mb-4">
+      Our Services
+    </h2>
+
+    <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-16">
+      Holistic therapies designed to improve your physical, mental and emotional wellbeing.
+    </p>
+
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+      {specialties.slice(0, 6).map((s, i) => (
+
+        <div
+          key={i}
+          className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+        >
+
+          {/* Image Placeholder */}
+
+          <div className="relative h-48 w-full overflow-hidden">
+  <Image
+    src={s.image}
+    alt={s.title}
+    fill
+    className="object-cover transition-transform duration-500 hover:scale-110"
+  />
+</div>
+
+          {/* Service Name */}
+
+          <div className="p-6 text-center">
+
+            <h3 className="text-xl text-green-900 font-medium">
+              {s.title}
+            </h3>
+
           </div>
-        </section>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+  <div className="flex justify-center mt-16">
+  <a
+    href="/services"
+    className="inline-flex items-center justify-center px-10 py-4 bg-green-700 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-green-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+  >
+    Explore More Services
+  </a>
+</div>
+</section>
 
         {/* ================= TESTIMONIALS ================= */}
         <section className="py-24 px-6">

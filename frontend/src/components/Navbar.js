@@ -13,9 +13,12 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {isHome ? (
             // HOME PAGE → SHOW BRAND NAME
-            <span className="text-2xl font-medium text-green-900">
-              Ventha Wellness
-            </span>
+            <Link
+  href="/"
+  className="text-2xl font-medium text-green-900 hover:text-green-700 transition"
+>
+  Ventha Wellness
+</Link>
           ) : (
             // INNER PAGES → SHOW BACK ARROW
             <button
@@ -29,15 +32,78 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT SIDE NAV LINKS */}
-        <div className="hidden md:flex gap-8 text-sm text-green-900">
-          <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/programs">Programs</Link>
-          <Link href="/methods">Methods</Link>
-          <Link href="/workshops">Workshops</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/ventha-universe">Ventha Universe</Link>
-        </div>
+        {/* RIGHT SIDE NAV LINKS */}
+
+<div className="hidden md:flex items-center gap-8 text-sm text-green-900">
+
+  <Link href="/" className="hover:text-green-700 transition">
+    Home
+  </Link>
+
+  <Link href="/about" className="hover:text-green-700 transition">
+    About Us
+  </Link>
+ <Link
+  href="/services"
+  className={`transition ${
+    router.pathname === "/services"
+      ? "text-green-700 font-semibold"
+      : "hover:text-green-700"
+  }`}
+>
+  Services
+</Link>
+
+  <Link
+    href="/programs"
+    className={`transition ${
+      router.pathname === "/programs"
+        ? "text-green-700 font-semibold"
+        : "hover:text-green-700"
+    }`}
+  >
+    Programs
+  </Link>
+
+  <Link href="/methods" className="hover:text-green-700 transition">
+    Methods
+  </Link>
+
+  <Link href="/workshops" className="hover:text-green-700 transition">
+    Workshops
+  </Link>
+
+  <Link href="/events" className="hover:text-green-700 transition">
+    Events
+  </Link>
+
+  <Link href="/ventha-universe" className="hover:text-green-700 transition">
+    Ventha Universe
+  </Link>
+
+  {/* Book Consultation Button */}
+
+  <Link
+    href="/consultation"
+    className="
+      bg-green-700
+      hover:bg-green-800
+      text-white
+      px-6
+      py-3
+      rounded-full
+      font-medium
+      shadow-lg
+      hover:shadow-xl
+      hover:-translate-y-0.5
+      transition-all
+      duration-300
+    "
+  >
+    Book Consultation
+  </Link>
+
+</div>
       </div>
     </nav>
   );
